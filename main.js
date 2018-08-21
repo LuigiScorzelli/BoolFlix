@@ -54,28 +54,23 @@ function printResult(data){
 
 function printStars (data){
   var star = data.results;
-  // var item = $('div.vote').clone();
-  // var prova = $('.template').clone();
-  var tag = $('<i>');
 
     // prendiamo il voto ciclando su star
   for(i = 0; i < star.length; i++){
     var vote = star[i].vote_average;
     var number = vote / 2;
     var newNumber = Math.floor(number);
+    var difference = 5 - newNumber;
 
+    var openLi = $('ul.stars').append('<li>');
 
     for(k = 0; k < newNumber; k++){
-     $('.vote').append('<i class="far fa-star"></i>');
-    //
-    //   var stars = $(tag).addClass('far fa-star');
-    //   console.log(stars[k]);
-    //   // var item = $('.vote').clone();
-    //
-    //   document.getElementsByClassName('vote').innerHTML = 'dfd';
-    //   // $(this).append(stars);
+     $(openLi).append('<i class="fas fa-star yellow"></i>');
     }
-
+    for(f = 0; f < difference; f++){
+      $(openLi).append('<i class="fas fa-star grey"></i>');
+    }
+    var closeLi = $('ul.stars').append('</li>');
   };
 
 };
