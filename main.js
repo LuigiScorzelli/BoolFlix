@@ -54,48 +54,28 @@ function printResult(data){
 
 function printStars (data){
   var star = data.results;
+  // var item = $('div.vote').clone();
+  // var prova = $('.template').clone();
+  var tag = $('<i>');
 
+    // prendiamo il voto ciclando su star
   for(i = 0; i < star.length; i++){
-    var prova = star[i].vote_average;
-    var item = $('.item').clone();
-    var a = $(item).children();
+    var vote = star[i].vote_average;
+    var number = vote / 2;
+    var newNumber = Math.floor(number);
 
-    // trasformo il voto in un numero da 1 a 5
 
-    if(prova === 0 && prova <= 2){
-      prova = 1;
-      // $('ul#voto').append('<i class="far fa-star"></i>');
-      $(a).css('far fa-star"');
-      console.log(a);
-      // console.log(prova);
-     }
-    //  else if((prova > 2) && (prova <= 4)){
-    //    prova = 2;
-    //   console.log(prova);
-    //   for(a = 0; a <= 1; a++){
-    //     $('ul#voto').append('<i class="far fa-star"></i>');
-    //   }
-    // }
-    // else if((prova > 4) && (prova <= 6)){
-    //   prova = 3;
-    //   console.log(prova)
-    //   for(b = 0; b <= 2; b++){
-    //     $('ul#voto').append('<i class="far fa-star"></i>');
-    //   }
-    // }
-    // else if((prova > 6) && (prova <= 8)){
-    //   prova = 4;
-    //   console.log(prova)
-    //   for(c = 0; c <= 3; c++){
-    //     $('ul#voto').append('<i class="far fa-star"></i>');
-    //   }
-    // }
-    // else if((prova > 8) && (prova <= 10)){
-    //   prova = 5;
-    //   console.log(prova)
-    //   for(d = 0; d <= 4; d++){
-    //     $('ul#voto').append('<i class="far fa-star"></i>');
-    //   }
-    // }
-  }
+    for(k = 0; k < newNumber; k++){
+     $('.vote').append('<i class="far fa-star"></i>');
+    //
+    //   var stars = $(tag).addClass('far fa-star');
+    //   console.log(stars[k]);
+    //   // var item = $('.vote').clone();
+    //
+    //   document.getElementsByClassName('vote').innerHTML = 'dfd';
+    //   // $(this).append(stars);
+    }
+
+  };
+
 };
